@@ -7,17 +7,8 @@ const Navbar = ({ isLoggedIn }) => {
         <nav className="navbar">
             <div className="navbar-brand">
                 <Link className="navbar-item" to="/">
-                    <img 
-                        src="https://bulma.io/images/bulma-logo.png" 
-                        width="112" 
-                        height="28" 
-                        alt="brand-logo"/>
+                    <h1 className="wyng">WYNG</h1>
                 </Link>
-                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>    
             </div>
             <div className="navbar-end login">
                 <div className="navbar-item">

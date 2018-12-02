@@ -2,16 +2,26 @@
 @import "~bulma/sass/components/navbar.sass";
 @import "~bulma/sass/elements/button.sass";
 
-.login {
-    display: none;
+
+.navbar {
+    display: flex;
+    .wyng {
+        color: #570E84;
+        font-weight: bold;
+    }
+    .login {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
 }
 
 a {
     text-decoration: none;
 }
 
-@media only screen and (min-width: 1080px) {
-    .login {
-        display: block
-    }
-}
+// @media only screen and (min-width: 1080px) {
+//     .login {
+//         display: block
+//     }
+// }
