@@ -1,7 +1,7 @@
-// if (process.env.NODE_ENV === 'production') {
-//     module.exports = require('./prod');
-// } else {
-//     module.exports = require('./dev');
-// }
-
-module.exports = require('./prod');
+if (process.env.NODE_ENV === 'production') {
+    console.log('PRODDDDD')
+    module.exports = require('./prod');
+} else {
+    console.log('ASDASDADSADS')
+    module.exports = require('./dev');
+}
