@@ -23,20 +23,23 @@ const fetchImages = (state, action) => {
     return {
         ...state,
         images: action.payload,
-        loading: false
+        loading: false,
+        errorMessage: false
     }
 }
 
 const fetchImagesLoading = (state) => {
     return {
         ...state,
-        loading: true
+        loading: true,
+        errorMessage: false
     }
 }
 
 const fetchImagesError = (state) => {
     return {
         ...state,
+        loading: false,
         errorMessage: true
     }
 }

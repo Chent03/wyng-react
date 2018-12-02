@@ -8,6 +8,7 @@ import './Gallery.scss';
 import ImageView from './ImageViews/ImageViews';
 import Spinner from '../UI/Spinner/Spinner';
 import LoginModal from '../UI/LoginModal/LoginModal';
+import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 
 export class Gallery extends Component {
 
@@ -33,6 +34,8 @@ export class Gallery extends Component {
         } else {
             if(this.props.loading) {
                 return <Spinner />
+            } else if(this.props.errorMsg) {
+                return <ErrorMessage />
             } else {
                 return this.props.images.map(image => {
                     return <ImageView 

@@ -22,11 +22,10 @@ export const fetchError = () => {
 
 export const postVote = (id) => async (dispatch) => {
     try {
-        console.log(id);
         let res = await axios.post('/api/vote', { imageId: id});
         dispatch({ type: FETCH_USER, payload: res.data })
     } catch(e) {
-        console.log(e);
+        dispatch(fetchError());
     }
 
 }

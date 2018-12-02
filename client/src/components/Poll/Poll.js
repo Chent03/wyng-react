@@ -7,6 +7,7 @@ import { fetchImages } from '../../store/actions';
 import BarChart from '../UI/BarChart/BarChart';
 
 import Spinner from '../UI/Spinner/Spinner';
+import ErrorMessage from '../UI/ErrorMessage/ErrorMessage';
 
 export class Poll extends Component {
 
@@ -25,7 +26,9 @@ export class Poll extends Component {
         
         if(this.props.loading) {
             return <Spinner />
-        } else {
+        } else if(this.props.errorMsg) {
+            return <ErrorMessage />
+        }else {
             return <BarChart votes={data} titles={labels}/>
         }
     }
