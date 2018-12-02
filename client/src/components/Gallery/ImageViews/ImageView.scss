@@ -1,0 +1,19 @@
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/elements/image.sass";
+@import "~bulma/sass/components/card.sass";
+
+
+.imageView {
+    width: 300px;
+    margin: 20px;
+}
+
+.thumbsup {
+    cursor: pointer;
+}
+
+.card-header-title {
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+}

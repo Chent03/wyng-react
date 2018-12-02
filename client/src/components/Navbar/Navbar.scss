@@ -1,0 +1,17 @@
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/elements/button.sass";
+
+.login {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 1080px) {
+    .login {
+        display: block
+    }
+}

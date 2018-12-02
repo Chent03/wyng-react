@@ -1,0 +1,15 @@
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/components/modal.sass";
+
+.modal-card-title {
+    text-align: center;
+}
+
+.modal-card-body{
+    text-align: center;
+}
+
+.modal-card-foot{
+    display: flex;
+    justify-content: center;
+}
