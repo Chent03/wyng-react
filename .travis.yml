@@ -1,0 +1,30 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t chent03/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run chent03/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t chent03/wyng-client ./client
+  - docker build -t chent03/wyng-server .
+  - docker build -t chent03/wyng-nginx ./nginx
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push chent03/wyng-client
+  - docker push chent03/wyng-server
+  - docker push chent03/wyng-nginx
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-2
+#   app: Kaplan-react
+#   env: KaplanReact-env
+#   bucket_name: elasticbeanstalk-us-east-2-337456930219
+#   bucket_path: docker-multi
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
