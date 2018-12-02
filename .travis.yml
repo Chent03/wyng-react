@@ -17,14 +17,14 @@ after_success:
   - docker push chent03/wyng-server
   - docker push chent03/wyng-nginx
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-east-2
-#   app: Kaplan-react
-#   env: KaplanReact-env
-#   bucket_name: elasticbeanstalk-us-east-2-337456930219
-#   bucket_path: docker-multi
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: Wyng-react
+  env: WyngReact-env
+  bucket_name: elasticbeanstalk-us-east-2-337456930219
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
